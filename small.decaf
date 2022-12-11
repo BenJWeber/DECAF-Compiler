@@ -1,0 +1,41 @@
+extern func print_string(string) void;
+extern func print_int(int) void;
+extern func read_int() int;
+
+package foo {
+	
+	var x int;
+	var A[100] int;
+	var y int = 5;
+    func main () void {
+		
+		x = 0;
+		y = 0;
+		while (x < 3) {
+			print_string("while statement 1\n");
+			if ((!(x < 2) && !(x <= 1)) || (x >= 4)) {
+				print_int(x);
+				print_string(" : ");
+				print_int(x * 10 - 1 + 10 / 2);
+				print_string("\n");
+				if (true) {
+					print_string("first nested if");
+					print_string("\n");
+					if (true) {
+						print_string("second nested if");
+						print_string("\n");
+					}
+				}
+			}
+			while (y < 2) {
+				print_string("while statement 2");
+				print_string("\n");
+				y = y + 1;
+			}
+
+			x = x + 1;
+		}
+		
+
+	}
+} // end of foo
